@@ -68,10 +68,12 @@ def main():
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_e:
                             paused = not paused
+                        elif event.key == pygame.K_q:
+                            sys.exit()
                 pygame.Surface.fill(screen,(0,0,0))
                 check = True
                 text_win = win_font.render(f"YOU WIN!!", True, pygame.Color('white'))
-                text_end = font.render(f"Please exit the game or press e to go into endless!", True, pygame.Color('white'))
+                text_end = font.render(f"Please press q to exit the game or press e to go into endless!", True, pygame.Color('white'))
                 screen.blit(text_win, (SCREEN_WIDTH/3, SCREEN_HEIGHT/2.2))
                 screen.blit(text_end, (x, y))
                 pygame.display.flip()
