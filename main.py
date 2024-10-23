@@ -44,7 +44,7 @@ def main():
             for asteroid in asteroids:
                 for bullet in shots:
                     if asteroid.collision(bullet):
-                        asteroid.kill()
+                        asteroid.split()
                         bullet.kill()
                         point += 1
             
@@ -57,7 +57,7 @@ def main():
             text_surface = font.render(f"Current Score: {point}", True, pygame.Color('white'))
             screen.blit(text_surface, (x, y))
 
-            if point == 10 and check == False:
+            if point == 30 and check == False:
                 paused = not paused
             pygame.display.flip()
             dt = clock.tick(60) / 1000
