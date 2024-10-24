@@ -38,7 +38,10 @@ def main():
 
             for asteroid in asteroids:
                 if asteroid.collision(player):
-                    print("Game over!")
+                    text_over = win_font.render(f"GAME OVER", True, pygame.Color('white'))
+                    screen.blit(text_over, (SCREEN_WIDTH/3.5, SCREEN_HEIGHT/2.2))
+                    pygame.display.flip()
+                    pygame.time.delay(3000)
                     sys.exit()
 
             for asteroid in asteroids:
